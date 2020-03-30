@@ -1,0 +1,19 @@
+#+TITLE: Spacemacs configuration
+
+* Capture templates
+
+* Easy templates
+
+* Package configuration
+
+** Deft
+
+#+begin_src emacs-lisp
+(setq deft-directory "~/org/notes/")
+(setq deft-file-naming-rules
+      '((noslash . "-")
+        (nospace . "-")
+        (case-fn . downcase)))
+(setq deft-use-filename-as-title nil)
+(setq deft-org-mode-title-prefix t)
+#+end_src
