@@ -37,8 +37,11 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
 
 ** org-mode
 
+The folder =~/org/= is actually a hard link pointing to the document folder of /beorg/ (iOS app) in iCloud.
+That way I can access my agenda on the go.
+
 #+begin_src emacs-lisp
-(setq org-agenda-files '("~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org"))
+(setq org-agenda-files '("~/org"))
 #+end_src
 
 *** org-capture templates
