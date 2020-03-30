@@ -13,6 +13,11 @@
 * Easy templates
 
 * Package configuration
+** TODO anki-editor
+
+#+begin_src 
+(setq org-use-property-inheritance (cons "ANKI_DECK" org-use-property-inheritance))
+#+end_src
 
 ** Deft
 
@@ -24,10 +29,12 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
 (setq deft-directory "~/org/notes/")
 (setq deft-file-naming-rules
   '((noslash . "-")
-  (nospace . "-")
-  (case-fn . downcase)))
+    (nospace . "-")
+    (case-fn . downcase)))
 (setq deft-use-filename-as-title nil)
 (setq deft-org-mode-title-prefix t)
+;; (setq deft-org-mode-title-prefix t t)
+;; (setq deft-use-filename-as-title nil t)
 #+end_src
 
 ** org-mode
