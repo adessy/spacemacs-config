@@ -42,3 +42,12 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
   (org-defkey org-mode-map [(meta return)] 'org-meta-return)
 )
 #+end_src
+
+** org-contacts 
+
+#+begin_src emacs-lisp
+(use-package org-contacts
+  :ensure nil
+  :after org
+  :custom (org-contacts-files '("~/org/contacts.org")))
+#+end_src
