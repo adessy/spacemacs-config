@@ -8,10 +8,6 @@
 (setq mac-option-modifier 'none)
 #+end_src
 
-* Capture templates
-
-* Easy templates
-
 * Package configuration
 ** TODO anki-editor
 
