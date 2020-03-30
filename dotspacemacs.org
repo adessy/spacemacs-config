@@ -1,6 +1,6 @@
 #+TITLE: Spacemacs configuration
 
-* Mac OSX 
+* Mac OS X 
 
 #+begin_src emacs-lisp
 (setq default-input-method "MacOSX")
