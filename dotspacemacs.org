@@ -1,5 +1,11 @@
 #+TITLE: Spacemacs configuration
 
+* TODO's
+
+- [ ] migrate =dotspacemacs/init=
+- [ ] migrate =dotspacemacs/user-init=
+- [ ] migrate =dotspacemacs/user-config=
+
 * Mac OS X 
 
 #+begin_src emacs-lisp
