@@ -33,8 +33,6 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
     (case-fn . downcase)))
 (setq deft-use-filename-as-title nil)
 (setq deft-org-mode-title-prefix t)
-;; (setq deft-org-mode-title-prefix t t)
-;; (setq deft-use-filename-as-title nil t)
 #+end_src
 
 ** org-mode
