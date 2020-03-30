@@ -10,9 +10,11 @@
 
 * Package configuration
 ** TODO anki-editor
+   Here, we setup the property inheritance to be able to indicate the =ANKI_DECK= property at the file level.
+   Ideally, we should append the value to the list instead of replacing the value of =org-use-property-inheritance= altogether.
 
 #+begin_src 
-(setq org-use-property-inheritance (cons "ANKI_DECK" org-use-property-inheritance))
+(setq org-use-property-inheritance '("ANKI_DECK"))
 #+end_src
 
 ** Deft
