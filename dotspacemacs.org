@@ -10,6 +10,8 @@
 
 * Package configuration
 ** TODO anki-editor
+   /anki-editor/ is a minor-mode for making Anki with Org.
+
    Here, we setup the property inheritance to be able to indicate the =ANKI_DECK= property at the file level.
    Ideally, we should append the value to the list instead of replacing the value of =org-use-property-inheritance= altogether.
 
