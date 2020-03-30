@@ -1,5 +1,13 @@
 #+TITLE: Spacemacs configuration
 
+* Mac OSX 
+
+#+begin_src emacs-lisp
+(setq default-input-method "MacOSX")
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'none)
+#+end_src
+
 * Capture templates
 
 * Easy templates
@@ -7,6 +15,7 @@
 * Package configuration
 
 ** Deft
+
 #+begin_quote
 Deft is an Emacs mode for quickly browsing, filtering, and editing directories of plain text notes, inspired by Notational Velocity. It was designed for increased productivity when writing and taking notes by making it fast and simple to find the right file at the right time and by automating many of the usual tasks such as creating new files and saving files.
 #+end_quote
