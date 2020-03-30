@@ -37,6 +37,40 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
 
 ** org-mode
 
+#+begin_src emacs-lisp
+(setq org-agenda-files '("~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org"))
+#+end_src
+
+*** org-capture templates
+
+#+begin_src emacs-lisp
+(setq org-capture-templates
+  (quote
+   (("j" "Journal entry" entry
+     (file+olp+datetree "~/org/journal.org")
+     (file "~/org/capture_templates/journal.template")
+     :empty-lines 1)
+
+    ("c" "New contact" entry
+     (file "~/org/contacts.org")
+     (file "~/org/capture_templates/contact.template")
+     :empty-lines 1)
+
+    ("w" "Web capture" entry
+     (file+olp+datetree "~/org/capture.org")
+     (file "~/org/capture_templates/firefox.template")
+     :empty-lines 1))))
+#+end_src
+
+*** org-contacts 
+
+#+begin_src emacs-lisp
+(use-package org-contacts
+  :ensure nil
+  :after org
+  :custom (org-contacts-files '("~/org/contacts.org")))
+#+end_src
+
 *** Fix "M-RET broken in org-mode" 
 
     Fix for binding M-RET to org-meta-return instead of acting as major mode leader key.
@@ -46,15 +80,6 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
 (with-eval-after-load 'org 
   (org-defkey org-mode-map [(meta return)] 'org-meta-return)
 )
-#+end_src
-
-** org-contacts 
-
-#+begin_src emacs-lisp
-(use-package org-contacts
-  :ensure nil
-  :after org
-  :custom (org-contacts-files '("~/org/contacts.org")))
 #+end_src
 
 * Load =.custom.el=
