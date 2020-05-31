@@ -1,0 +1,13 @@
+* Basic note  
+  :PROPERTIES:
+  :SOURCE: %a
+  :CREATED: %U
+  :ANKI_NOTE_TYPE: basic-org
+  :END:
+%^{ANKI_DECK}p
+
+** Front
+
+   %?%(string-trim "%i")
+
+** Back

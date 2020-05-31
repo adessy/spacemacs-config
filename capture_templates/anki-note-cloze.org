@@ -1,0 +1,13 @@
+* Cloze note  
+  :PROPERTIES:
+  :SOURCE: %a
+  :CREATED: %U
+  :ANKI_NOTE_TYPE: cloze
+  :END:
+%^{ANKI_DECK}p
+
+** Text
+
+   %?%(string-trim "%i")
+
+** Extra
