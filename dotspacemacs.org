@@ -126,7 +126,7 @@ loaded, if existing.
 #+end_quote
 
 #+BEGIN_SRC emacs-lisp
-(setq-default custom-file (expand-file-name ".custom.el" dotspacemacs-directory))
+(setq-default custom-file (expand-file-name "easy_customization.el" dotspacemacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
 #+END_SRC
