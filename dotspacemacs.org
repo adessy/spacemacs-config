@@ -69,22 +69,22 @@ That way I can access my agenda on the go.
 (setq org-capture-templates
   '(("j" "Journal entry" entry
      (file+olp+datetree "~/org/journal.org")
-     (file "~/org/capture_templates/journal.template")
+     (file "./capture_templates/journal.template")
      :empty-lines 1)
 
     ("c" "New contact" entry
      (file "~/org/contacts.org")
-     (file "~/org/capture_templates/contact.template")
+     (file "./capture_templates/contact.template")
      :empty-lines 1)
 
     ("w" "Web capture" entry
      (file+olp+datetree "~/org/capture.org")
-     (file "~/org/capture_templates/firefox.template")
+     (file "./capture_templates/firefox.template")
      :empty-lines 1)
 
     ("a" "Anki card" entry
      (file "~/org/anki.org")
-     (file "~/org/capture_templates/anki.template")
+     (file "./capture_templates/anki.template")
      :empty-lines 1)))
 #+end_src
 
