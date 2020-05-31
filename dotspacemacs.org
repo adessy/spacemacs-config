@@ -32,13 +32,25 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
 #+end_quote
 
 #+begin_src emacs-lisp
-(setq deft-directory "~/org/notes/")
-(setq deft-file-naming-rules
-  '((noslash . "-")
-    (nospace . "-")
-    (case-fn . downcase)))
-(setq deft-use-filename-as-title nil)
-(setq deft-org-mode-title-prefix t)
+  (setq deft-directory "~/org/notes/")
+  (setq deft-recursive t)
+  (setq deft-file-naming-rules
+    '((noslash . "-")
+      (nospace . "-")
+      (case-fn . downcase)))
+  (setq deft-use-filename-as-title nil)
+  (setq deft-org-mode-title-prefix t)
+#+end_src
+
+** org-journal
+   
+#+begin_src emacs-lisp
+#+end_src
+
+** org-roam
+
+#+begin_src emacs-lisp
+(setq org-roam-directory "~/org/notes/")
 #+end_src
 
 ** org-mode
@@ -48,14 +60,14 @@ That way I can access my agenda on the go.
 
 #+begin_src emacs-lisp
 (setq org-agenda-files '("~/org"))
+(setq org-cycle-emulate-tab 'white)
 #+end_src
 
 *** org-capture templates
 
 #+begin_src emacs-lisp
 (setq org-capture-templates
-  (quote
-   (("j" "Journal entry" entry
+  '(("j" "Journal entry" entry
      (file+olp+datetree "~/org/journal.org")
      (file "~/org/capture_templates/journal.template")
      :empty-lines 1)
@@ -68,7 +80,12 @@ That way I can access my agenda on the go.
     ("w" "Web capture" entry
      (file+olp+datetree "~/org/capture.org")
      (file "~/org/capture_templates/firefox.template")
-     :empty-lines 1))))
+     :empty-lines 1)
+
+    ("a" "Anki card" entry
+     (file "~/org/anki.org")
+     (file "~/org/capture_templates/anki.template")
+     :empty-lines 1)))
 #+end_src
 
 *** org-contacts 
