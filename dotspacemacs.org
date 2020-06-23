@@ -60,33 +60,40 @@ That way I can access my agenda on the go.
 
 #+begin_src emacs-lisp
 (setq org-agenda-files '("~/org"))
-(setq org-cycle-emulate-tab 'white)
 #+end_src
 
 *** org-capture templates
 
 #+begin_src emacs-lisp
-(setq org-capture-templates
-  '(("j" "Journal entry" entry
-     (file+olp+datetree "~/org/journal.org")
-     (file "./capture_templates/journal.template")
-     :empty-lines 1)
+  (setq org-capture-templates
+    '(("w" "Web capture" entry
+       (file+olp+datetree "~/org/capture.org")
+       (file "~/.spacemacs.d/capture_templates/firefox.org")
+       :empty-lines 1)
 
-    ("c" "New contact" entry
-     (file "~/org/contacts.org")
-     (file "./capture_templates/contact.template")
-     :empty-lines 1)
+      ("a" "Anki notes")
 
-    ("w" "Web capture" entry
-     (file+olp+datetree "~/org/capture.org")
-     (file "./capture_templates/firefox.template")
-     :empty-lines 1)
+      ("aa" "Basic" entry
+       (file "~/org/anki-decks.org")
+       (file "~/.spacemacs.d/capture_templates/anki-note-basic.org") 
+       :empty-lines 1)
 
-    ("a" "Anki card" entry
-     (file "~/org/anki.org")
-     (file "./capture_templates/anki.template")
-     :empty-lines 1)))
+      ("az" "Cloze" entry
+       (file "~/org/anki-decks.org")
+       (file "~/.spacemacs.d/capture_templates/anki-note-cloze.org") 
+       :empty-lines 1)
+
+      ("af" "Basic from clipboard" entry
+       (file "~/org/anki-decks.org")
+       (file "~/.spacemacs.d/capture_templates/anki-note-basic-clipboard.org") 
+       :empty-lines 1)
+
+      ("ad" "Cloze from clipboard" entry
+       (file "~/org/anki-decks.org")
+       (file "~/.spacemacs.d/capture_templates/anki-note-cloze-clipboard.org") 
+       :empty-lines 1)))
 #+end_src
+
 
 *** org-contacts 
 
