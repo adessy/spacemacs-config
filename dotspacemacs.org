@@ -9,9 +9,10 @@
 * Mac OS X 
 
 #+begin_src emacs-lisp
-(setq default-input-method "MacOSX")
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'none)
+  (setq default-input-method "MacOSX")
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'none)
+  (setq mac-right-option-as 'meta)
 #+end_src
 
 * Package configuration
@@ -53,15 +54,26 @@ Deft is an Emacs mode for quickly browsing, filtering, and editing directories o
 (setq org-roam-directory "~/org/notes/")
 #+end_src
 
-** org-mode
+* org-mode
 
 The folder =~/org/= is actually a hard link pointing to the document folder of /beorg/ (iOS app) in iCloud.
 That way I can access my agenda on the go.
 
 #+begin_src emacs-lisp
 (setq org-agenda-files '("~/org"))
+
+(add-hook 'auto-save-hook 'org-save-all-org-buffers)
+(setq auto-save-interval 80)
+(setq auto-save-timeout 15)
 #+end_src
 
+*** Bibtex layer
+
+#+begin_src emacs-lisp
+(setq org-ref-default-bibliography '("~/org/references.bib")
+      org-ref-pdf-directory "~/org/papers/"
+      org-ref-bibliography-notes "~/org/papers/notes.org")
+#+end_src
 *** org-capture templates
 
 #+begin_src emacs-lisp
@@ -93,7 +105,6 @@ That way I can access my agenda on the go.
        (file "~/.spacemacs.d/capture_templates/anki-note-cloze-clipboard.org") 
        :empty-lines 1)))
 #+end_src
-
 
 *** org-contacts 
 

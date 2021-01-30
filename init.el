@@ -30,7 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(bibtex
+     csv
      html
      auto-completion
      clojure
@@ -42,8 +43,9 @@ values."
      javascript
      latex
      markdown
-     (org :variables org-enable-org-journal-support t)
-     org-roam
+     (org :variables
+          org-enable-roam-support t
+          org-enable-org-journal-support t)
      osx
      (shell :variables
             shell-default-position 'right)
