@@ -16,7 +16,7 @@
 #+end_src
 
 * Package configuration
-** TODO anki-editor
+** anki-editor
    /anki-editor/ is a minor-mode for making Anki with Org.
 
    Here, we setup the property inheritance to be able to indicate the =ANKI_DECK= property at the file level.
@@ -26,7 +26,7 @@
 (setq org-use-property-inheritance '("ANKI_DECK"))
 #+end_src
 
-** Deft
+** deft
 
 #+begin_quote
 Deft is an Emacs mode for quickly browsing, filtering, and editing directories of plain text notes, inspired by Notational Velocity. It was designed for increased productivity when writing and taking notes by making it fast and simple to find the right file at the right time and by automating many of the usual tasks such as creating new files and saving files.
@@ -60,12 +60,21 @@ The folder =~/org/= is actually a hard link pointing to the document folder of /
 That way I can access my agenda on the go.
 
 #+begin_src emacs-lisp
-(setq org-agenda-files '("~/org"))
+  (setq org-agenda-files '("~/org"))
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (setq org-refile-targets '(("~/org/gtd.org" :maxlevel . 3)
+                             ("~/org/someday.org" :level . 1)))
 
-(add-hook 'auto-save-hook 'org-save-all-org-buffers)
-(setq auto-save-interval 80)
-(setq auto-save-timeout 15)
+  (add-hook 'auto-save-hook 'org-save-all-org-buffers)
+  (setq auto-save-interval 80)
+  (setq auto-save-timeout 15)
+  (setq org-agenda-custom-commands 
+      '(("o" "At the office" tags-todo "@office"
+         ((org-agenda-overriding-header "Office")))))
 #+end_src
+
+#+RESULTS:
+| o | At the office | tags-todo | @office | ((org-agenda-overriding-header Office)) |
 
 *** Bibtex layer
 
